@@ -1,0 +1,1 @@
+export const UPD_CUR_CITY = 'UPD_CUR_CITY';
