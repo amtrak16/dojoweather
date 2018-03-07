@@ -4,9 +4,15 @@ import { getCityDetails } from './state/actions';
 
 
 class City extends Component {
-  componentDidMount() {
-    this.props.getCityDetails(this.props.match.params.cityName);
+  shouldComponentUpdate () {
+    if (this.props.match.params.cityName === this.props.currentCity.name) {
+      console.log(this.props.match.params.cityName, this.props.currentCity.name)
+      return false}
+      else {
+      this.props.getCityDetails(this.props.match.params.cityName);
+      return true;
   }
+}
 
   render() {
 
